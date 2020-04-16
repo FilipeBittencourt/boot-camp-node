@@ -1,0 +1,19 @@
+postgres:
+yarn add pg pg-hstore
+
+**** docker *****
+docker run --name database -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres
+
+docker start 019cb1b51582 
+docker stop 019cb1b51582
+docker rm 019cb1b51582 (remove)
+
+****** migrations ******
+cridando
+   yarn sequelize migration:create --name=create-users
+   yarn sequelize migration:create --name=create-files
+   yarn sequelize migration:create --name=create-appointments
+
+cridando no BD: yarn sequelize db:migrate
+
+desfazendo a ultima/tudo: yarn sequelize db:migrate:undo <ou> db:migrate:undo:all
