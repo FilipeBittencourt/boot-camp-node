@@ -3,9 +3,15 @@ yarn add pg pg-hstore
 
 **** docker *****
 docker run --name database -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres
+docker run --name mongobarber -p 27017:27017 -d -t mongo
+docker run --name redisbarber -p 6379:6379 -d -t  redis:alpine
 
-docker start 019cb1b51582 
+docker start 019cb1b51582  //postgres
+docker start 3f254f3be39a  //mongo
+docker start 1eece54d1274  //redis
 docker stop 019cb1b51582
+
+
 docker rm 019cb1b51582 (remove)
 
 ****** migrations ******
